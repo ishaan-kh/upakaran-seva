@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* === Primary saffron === */
+  --p:   #C8601C;
+  --pd:  #A54E14;
+  --ps:  #FCE8D6;
+  --psr: #FDF3E8;
+  --pi:  #6B340C;
+
+  /* === Semantic === */
+  --sc:  #15803D;  /* success green */
+  --sci: #14532D;
+  --scs: #DCFCE7;
+  --w:   #C2730F;  /* warning amber */
+  --wi:  #78350F;
+  --ws:  #FEF3C7;
+  --d:   #B33A1A;  /* danger terracotta */
+  --di:  #7C2D12;
+  --ds:  #FECACA;
+  --in:  #0E7490;  /* info teal */
+  --ini: #155E75;
+  --ins: #CFFAFE;
+
+  /* === Condition grades === */
+  --ga:  #15803D;
+  --gas: #DCFCE7;
+  --gb:  #65A30D;
+  --gbs: #ECFCCB;
+  --gc:  #C2730F;
+  --gcs: #FEF3C7;
+  --gd:  #DC2626;
+  --gds: #FEE2E2;
+  --ge:  #7C2D12;
+  --ges: #FECACA;
+
+  /* === Surfaces === */
+  --bg:  #FBF7F0;
+  --s2:  #F5EEE2;
+  --s3:  #ECE2CF;
+  --b:   #E8DFCE;
+  --bd:  #D4C7AB;
+
+  /* === Text === */
+  --t:   #1F1611;
+  --tm:  #6B5D4B;
+  --ts:  #8A7E6D;
+
+  /* === Surface white === */
+  --surface: #FFFFFF;
+
+  /* === Fonts === */
+  --fd: 'Fraunces', serif;
+  --fb: 'DM Sans', sans-serif;
+  --fm: 'JetBrains Mono', monospace;
+}
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--fb);
+  background: var(--bg);
+  color: var(--t);
+  -webkit-font-smoothing: antialiased;
+}
+
+.fd { font-family: var(--fd); letter-spacing: -0.01em; }
+.fm { font-family: var(--fm); }
+
+/* Animated entry */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.a-fi { animation: fadeIn 200ms ease-out; }
+
+/* Scrollbar polish */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: var(--b);
+  border-radius: 5px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--bd); }
+
+/* Form base */
+input, textarea, select {
+  font-family: inherit;
+  background: var(--surface);
+}
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid var(--p);
+  outline-offset: 1px;
+}
