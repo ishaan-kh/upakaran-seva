@@ -7,10 +7,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview",
+    "preview": "pnpm run build && wrangler dev",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "typecheck": "tsc --noEmit",
-    "supabase:types": "npx supabase gen types typescript --project-id $VITE_SUPABASE_PROJECT_REF > src/types/database.generated.ts"
+    "supabase:types": "npx supabase gen types typescript --project-id $VITE_SUPABASE_PROJECT_REF > src/types/database.generated.ts",
+    "deploy": "pnpm run build && wrangler deploy"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.0",
@@ -25,6 +26,7 @@
     "zod": "^4.0.0"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.36.0",
     "@types/node": "^22.10.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
@@ -37,7 +39,8 @@
     "tailwindcss": "^3.4.16",
     "typescript": "^5.7.0",
     "typescript-eslint": "^8.18.0",
-    "vite": "^6.0.0"
+    "vite": "^6.0.0",
+    "wrangler": "^4.88.0"
   },
   "engines": {
     "node": ">=20.0.0",
