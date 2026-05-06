@@ -10,3 +10,9 @@ dist
 .turbo
 .vercel
 src/types/database.generated.ts
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
